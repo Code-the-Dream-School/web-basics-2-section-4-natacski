@@ -13,28 +13,54 @@
   <div class="content-main">
     <h1>Week 4 Web Basics Assignment</h1>
     <div class="question-container">
-      <div class="question-item">
-        <div class="question-label">Question 1: if you click the square below the text changes 'x' to 'o' or vice versa </div>
-        <div id="a-1"></div>
+
+      <div id="q-1">
+        <div class="question-item">
+          <div class="question-label">Question 1: if you click the square below the text changes 'x' to 'o' or vice versa </div>
+          <div id="a-1">
+            <div class="square">X</div> 
+          </div>
+        </div>
       </div>
-      <div class="question-item">
-        <div class="question-label">Question 2: select any item on the list below and click the remove button to eliminate the item</div>
-        <div id="a-2"></div>
-      </div>
+
+      <div id="q-2">
+        <div class="question-item">
+          <div class="question-label">Question 2: select any item on the list below and click the remove button to eliminate the item</div>
+          <div id="a-2">
+            <select>
+              <option value="0">Red</option>
+              <option value="1">White</option>
+              <option value="2">Black</option>
+              <option value="3">Green</option>
+              <option value="4">Orange</option>
+            </select>
+
+           <button class="remove-item">Remove</button>
+          </div>
+        </div>
+    </div>
+
+    <div id="q-3">
       <div class="question-item">
         <div class="question-label">Question 3: insert the radius of a sphere and press the calculate button to see the results</div>
         <div id="a-3">
           <form action="" method="post" id="MyForm">
             <label for="radius">Radius </label><input type="text" name="radius" id="radius" required>
             <label for="volume">Volume </label><input type="text" name="volume" id="volume">
-            <label for="area">area </label><input type="text" name="area" id="area">
-            <button type="submit" value="Calculate" id="submit">calculate</button>
+            <label for="area">Area </label><input type="text" name="area" id="area">
+            <button type="submit" value="Calculate" id="submit">Calculate</button>
           </form>
         </div>
       </div>
+    </div>
+
       <div class="question-item">
         <div class="question-label">Question 4: press any of those buttons to hide or display the respective question</div>
-        <div id="a-4"></div>
+          <div id="a-4">
+              <button onclick="hideQuestion1()">hide/show Question #1</button>
+            <button onclick="hideQuestion2()">hide/show Question #2</button>
+            <button onclick="hideQuestion3()">hide/show Question #3</button>
+          </div>
       </div>
     </div>
   </div>
