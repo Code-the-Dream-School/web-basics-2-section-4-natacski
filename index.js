@@ -3,10 +3,21 @@
 // all right our new element needs style. For that, assign to the new element the className 'square'!. Each time the user clicks on the new element it has to respond changing the displayed text 'x' to 'o'
 
 
-
-
 //resolve // QUESTION 1 here
 
+const changeLetter = document.querySelector('.square');
+
+changeLetter.addEventListener('click', () => {
+        changeText();
+    });
+
+function changeText() {
+    if (changeLetter.innerHTML === 'X') {
+         changeLetter.innerHTML = 'O';
+    }else {
+        changeLetter.innerHTML = 'X';
+    }
+}
 
 
 
@@ -16,14 +27,19 @@
 //you also need to create a button that makes the remove action of the element selected
 // append the new list as a child of the element with the 'id = a-2'
 // append the button as a child of the element with the 'id = a-2'
+
+
 const colors = [ 'red' , 'white', 'black' , 'green' , 'orange'];
-
-
 
 
 //resolve // QUESTION 2 here
 
+const removeItemButton = document.querySelector('button.remove-item')
 
+removeItemButton.addEventListener('click', () => {
+    let select = document.getElementsByTagName('select')[0];
+    select.remove(select.selectedIndex);
+});
 
 
 
@@ -34,10 +50,26 @@ const colors = [ 'red' , 'white', 'black' , 'green' , 'orange'];
 //And display the results in the elements with the 'id = volume' and 'id = area' respectively
 //hint: the volumen of a sphere is ((4/3) × π × r^3) and the surface area is (4 × π × r^2)
 
+const calculate_sphere = () => {
 
-const calculate_sphere = () =>{
+    //Get the input value for radius
+    let radius = document.getElementById('radius').value;
+    radius = Math.abs(radius);
+    
+     //Generate the volume for the sphere
+    let volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+    volume = volume.toFixed(5);
+    document.getElementById('volume').value = volume;
+    
+    //Generate the area for the sphere
+    let area = 4 * Math.PI * Math.pow(radius, 2);
+    area = area.toFixed(5);
+    document.getElementById('area').value = area;
+    
+    return false;
 
  }
+
 
 window.onload = document.getElementById('MyForm').onsubmit = calculate_sphere; // this execute the volume_sphere function each time the calculate (submit) button is clicked
 
@@ -49,3 +81,50 @@ window.onload = document.getElementById('MyForm').onsubmit = calculate_sphere; /
 
 
 //resolve // QUESTION 4 here
+
+//hide-show question 1
+function hideQuestion1() {
+    let answer1 =  document.getElementById('q-1');
+    if (answer1.style.display === 'block') {
+        answer1.style.display = 'none';
+    }else {
+        answer1.style.display = 'block';
+    }
+}
+
+//hide-show question 2
+function hideQuestion2() {
+    let answer2 =  document.getElementById('q-2');
+    if (answer2.style.display === 'block') {
+        answer2.style.display = 'none';
+    }else {
+        answer2.style.display = 'block';
+    }
+
+}
+
+//hide-show question 3
+function hideQuestion3() {
+    let answer3 =  document.getElementById('q-3');
+    if (answer3.style.display === 'block') {
+        answer3.style.display = 'none';
+    }else {
+        answer3.style.display = 'block';
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
